@@ -19,8 +19,8 @@ import '@nx-example/shared/product/ui';
 export class ProductDetailPageComponent {
   product = this.route.paramMap.pipe(
     map((paramMap) => paramMap.get('productId')),
-    concatMap((productId) =>
-      this.store.pipe(select(getProductsState), select(getProduct, productId))
+    concatMap((pid) =>
+      this.store.pipe(select(getProductsState), select(getProduct, pid))
     )
   );
   constructor(

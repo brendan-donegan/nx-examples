@@ -27,5 +27,5 @@ jobs:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
     - run: yarn install
-    - run: yarn affected:lint
-    - run: yarn affected:test
+    - run: yarn nx affected --target=test --base=origin/master
+    - run: yarn nx affected --target=test --base=origin/master
